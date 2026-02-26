@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Tracking - Food Website</title>
+    <!-- for icons  -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <!-- bootstrap  -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <!-- custom css  -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/accessibility.css">
+    <link rel="stylesheet" href="assets/css/orders.css">
+</head>
+
+<body class="body-fixed">
+    <a href="#main-content" class="skip-navigation">Skip to main content</a>
+    
+    <!-- start of header  -->
+    <header class="site-header" role="banner">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2">
+                    <div class="header-logo">
+                        <a href="index.html" aria-label="Food Website Home">
+                            <img src="logo1.avif" width="160" height="60" alt="Food Website Logo">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-10">
+                    <div class="main-navigation">
+                        <button class="menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="main-menu">
+                            <span aria-hidden="true"></span><span aria-hidden="true"></span>
+                            <span class="sr-only">Menu</span>
+                        </button>
+                        <nav class="header-menu" id="main-menu" role="navigation" aria-label="Main navigation">
+                            <ul class="menu food-nav-menu">
+                                <li><a href="index.html#home" aria-label="Go to home section">Home</a></li>
+                                <li><a href="index.html#about" aria-label="Go to about section">About</a></li>
+                                <li><a href="index.html#menu" aria-label="Go to menu section">Menu</a></li>
+                                <li><a href="index.html#gallery" aria-label="Go to gallery section">Gallery</a></li>
+                                <li><a href="index.html#blog" aria-label="Go to blog section">Blog</a></li>
+                                <li><a href="index.html#contact" aria-label="Go to contact section">Contact</a></li>
+                            </ul>
+                        </nav>
+                        <div class="header-right">
+                            <a href="index.html" class="header-btn" role="button" aria-label="Back to home">
+                                <i class="uil uil-home" aria-hidden="true"></i>
+                                <span class="sr-only">Home</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header ends  -->
+
+    <main id="main-content" style="margin-top: 120px; padding: 40px 0;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="orders-header text-center mb-5">
+                        <h1 class="h1-title" style="color: #0d0d25; margin-bottom: 10px;">Order Tracking</h1>
+                        <p style="color: #666; font-size: 16px;">Track and manage your orders</p>
+                    </div>
+
+                    <!-- Order Search/Filter -->
+                    <div class="order-filters mb-4">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="orderSearch" class="sr-only">Search orders</label>
+                                <input type="text" id="orderSearch" class="form-input" placeholder="Search by order number..." aria-label="Search orders">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="statusFilter" class="sr-only">Filter by status</label>
+                                <select id="statusFilter" class="form-input" aria-label="Filter orders by status">
+                                    <option value="all">All Orders</option>
+                                    <option value="confirmed">Confirmed</option>
+                                    <option value="preparing">Preparing</option>
+                                    <option value="out_for_delivery">Out for Delivery</option>
+                                    <option value="delivered">Delivered</option>
+                                    <option value="cancelled">Cancelled</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Orders List -->
+                    <div id="ordersContainer" role="region" aria-label="Orders list">
+                        <div class="loading-message" id="loadingMessage" style="text-align: center; padding: 40px; color: #666;">
+                            <p>Loading your orders...</p>
+                        </div>
+                        <div id="noOrdersMessage" style="display: none; text-align: center; padding: 60px; background: #f8f9fa; border-radius: 12px;">
+                            <i class="uil uil-shopping-bag" style="font-size: 60px; color: #ccc; margin-bottom: 20px;" aria-hidden="true"></i>
+                            <h3 style="color: #666; margin-bottom: 10px;">No orders yet</h3>
+                            <p style="color: #999; margin-bottom: 30px;">Start ordering delicious food to see your order history here!</p>
+                            <a href="index.html#menu" class="sec-btn" style="display: inline-block;">Browse Menu</a>
+                        </div>
+                        <div id="ordersList" class="orders-list">
+                            <!-- Orders will be populated here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Order Details Modal -->
+    <div id="orderDetailsModal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="orderDetailsTitle" aria-hidden="true" style="display: none;">
+        <div class="profile-card order-details-modal" style="max-width: 700px; width: 90%; max-height: 90vh; overflow-y: auto;">
+            <div class="profile-header" style="padding: 20px; border-bottom: 1px solid #eee; display: flex; justify-content: space-between; align-items: center;">
+                <h3 id="orderDetailsTitle" style="margin:0; color:#ff8243;">Order Details</h3>
+                <button id="closeOrderDetails" aria-label="Close order details" style="background:none; border:none; font-size:30px; cursor:pointer; color:#ff8243;">
+                    <span aria-hidden="true">&times;</span>
+                    <span class="sr-only">Close</span>
+                </button>
+            </div>
+            <div id="orderDetailsContent" style="padding: 20px;">
+                <!-- Order details will be populated here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/jquery-3.5.1.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/accessibility.js"></script>
+    <script src="assets/js/orders.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
+

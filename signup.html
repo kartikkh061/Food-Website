@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup - Food Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/auth.css">
+    <link rel="stylesheet" href="assets/css/validation.css">
+    <link rel="stylesheet" href="assets/css/accessibility.css">
+</head>
+
+<body>
+    <a href="#main-content" class="skip-navigation">Skip to main content</a>
+    
+    <div class="gradient-bg" aria-hidden="true"></div>
+
+    <main id="main-content" class="registration" role="main">
+        <h1>Signup</h1>
+        <div class="form">
+            <form id="signupForm" aria-label="Create new account">
+                <div class="form-group">
+                    <label for="fname" class="sr-only">First name</label>
+                    <input type="text" id="fname" name="fname" placeholder="First name" aria-required="true" aria-label="First name" required>
+                </div>
+                <div class="form-group">
+                    <label for="lname" class="sr-only">Last name</label>
+                    <input type="text" id="lname" name="lname" placeholder="Last name" aria-required="true" aria-label="Last name" required>
+                </div>
+                <div class="form-group">
+                    <label for="username" class="sr-only">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Username" aria-required="true" aria-label="Username" aria-describedby="username-description" required>
+                    <span id="username-description" class="sr-only">Username must be 3-20 characters and can contain letters, numbers, underscores, and hyphens</span>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="sr-only">Email address</label>
+                    <input type="email" id="email" name="email" placeholder="Email address" aria-required="true" aria-label="Email address" autocomplete="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="sr-only">Create password</label>
+                    <input type="password" id="password" name="password" placeholder="Create password" aria-required="true" aria-label="Create password" aria-describedby="password-description" autocomplete="new-password" required>
+                    <span id="password-description" class="sr-only">Password must be at least 6 characters long</span>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword" class="sr-only">Confirm password</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm password" aria-required="true" aria-label="Confirm password" aria-describedby="confirm-password-description" autocomplete="new-password" required>
+                    <span id="confirm-password-description" class="sr-only">Re-enter your password to confirm</span>
+                </div>
+                
+                <input type="submit" class="button" value="Create Account" aria-label="Submit signup form">
+            </form>
+            <span class="signup">Already have an account?
+                <a href="login.html">Login here</a>
+            </span>
+        </div>
+    </div>
+
+    <script src="assets/js/auth-utils.js"></script>
+    <script src="assets/js/validation.js"></script>
+    <script src="assets/js/accessibility.js"></script>
+    <script src="assets/js/signup.js"></script>
+</body>
+</html>

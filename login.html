@@ -1,0 +1,95 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Food Website</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/auth.css">
+    <link rel="stylesheet" href="assets/css/login.css">
+    <link rel="stylesheet" href="assets/css/validation.css">
+    <link rel="stylesheet" href="assets/css/accessibility.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-navigation">Skip to main content</a>
+    
+    <div class="gradient-bg" aria-hidden="true"></div>
+    
+    <main id="main-content" class="form-container" role="main">
+        <div class="logo">
+            <i class="fas fa-rocket" aria-hidden="true"></i>
+            <h1>Welcome Back</h1>
+            <p>Sign in to your account to continue</p>
+        </div>
+        
+        <form id="loginForm" aria-label="Sign in form">
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <div class="input-with-icon">
+                    <i class="fas fa-envelope" aria-hidden="true"></i>
+                    <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email" aria-required="true" autocomplete="email" required>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password</label>
+                <div class="input-with-icon">
+                    <i class="fas fa-lock" aria-hidden="true"></i>
+                    <input type="password" id="password" name="password" class="form-control" placeholder="Enter your password" aria-required="true" autocomplete="current-password" required>
+                </div>
+            </div>
+            
+            <div class="checkbox-group">
+                <input type="checkbox" id="remember" name="remember" aria-label="Remember me for 30 days">
+                <label for="remember">Remember me for 30 days</label>
+                <a href="forgot-password.html" aria-label="Forgot password? Reset your password">Forgot password?</a>
+            </div>
+            
+            <button type="submit" class="submit-btn" aria-label="Sign in to your account">Sign In</button>
+            
+            <div class="divider" role="separator" aria-label="Or continue with social login">
+                <span>Or continue with</span>
+            </div>
+            
+            <div class="social-login" role="group" aria-label="Social login options">
+                <button type="button" class="social-btn google-btn" aria-label="Sign in with Google">
+                    <i class="fab fa-google" aria-hidden="true"></i>
+                    Google
+                </button>
+                <button type="button" class="social-btn github-btn" aria-label="Sign in with GitHub">
+                    <i class="fa-brands fa-github" aria-hidden="true"></i>
+                    GitHub
+                </button>
+            </div>
+            
+            <div class="signup-link">
+                Don't have an account? <a href="signup.html" aria-label="Create a new account">Sign up here</a>
+            </div>
+        </form>
+    </main>
+    
+    <div class="animation-control" role="group" aria-label="Animation controls">
+        <div>
+            <input type="checkbox" id="animationToggle" checked aria-label="Toggle animated background">
+            <label for="animationToggle">Animated Background</label>
+        </div>
+        <div class="speed-control">
+            <button id="speedDown" aria-label="Decrease animation speed" title="Slower">
+                <i class="fas fa-minus" aria-hidden="true"></i>
+                <span class="sr-only">Decrease speed</span>
+            </button>
+            <span id="speedDisplay" aria-live="polite">18s</span>
+            <button id="speedUp" aria-label="Increase animation speed" title="Faster">
+                <i class="fas fa-plus" aria-hidden="true"></i>
+                <span class="sr-only">Increase speed</span>
+            </button>
+        </div>
+    </div>
+    <script src="assets/js/auth-utils.js"></script>
+    <script src="assets/js/validation.js"></script>
+    <script src="assets/js/accessibility.js"></script>
+    <script src="assets/js/login.js"></script>
+    
+</body>
+</html>
+    
