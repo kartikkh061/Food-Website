@@ -3,7 +3,7 @@
 A modern, responsive, and highly interactive frontend web application for an Indian restaurant. This project features a full user experience, from browsing an authentic menu to tracking active orders.
 
 ## 🚀 Live Demo
-*(Link your hosted site here, e.g., GitHub Pages or Vercel)*
+ https://kartikkh061.github.io/Food-Website/
 
 ## ✨ Features
 * **Interactive Landing Page:** A dynamic hero section featuring GSAP animations and Parallax.js effects.
