@@ -1,0 +1,193 @@
+/**
+ * Form Validation Styles
+ * Error and success states for form inputs
+ */
+
+.form-group {
+    position: relative;
+    margin-bottom: 1rem;
+}
+
+.form-group .form input:not(.button),
+.form-group .form-control {
+    transition: all 0.3s ease;
+}
+
+/* Valid state */
+.form-group .form input.valid:not(.button),
+.form-group .form-control.valid {
+    border-color: #28a745;
+    background: #f8fff9;
+}
+
+.form-group .form input.valid:not(.button):focus,
+.form-group .form-control.valid:focus {
+    box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.2);
+}
+
+/* Invalid state */
+.form-group .form input.invalid:not(.button),
+.form-group .form-control.invalid {
+    border-color: #dc3545;
+    background: #fff5f5;
+}
+
+.form-group .form input.invalid:not(.button):focus,
+.form-group .form-control.invalid:focus {
+    box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.2);
+}
+
+/* Validation message */
+.validation-message {
+    font-size: 12px;
+    margin-top: 5px;
+    padding-left: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    animation: slideDown 0.3s ease;
+}
+
+.validation-message.error {
+    color: #dc3545;
+}
+
+.validation-message.success {
+    color: #28a745;
+}
+
+.validation-message::before {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 12px;
+}
+
+.validation-message.error::before {
+    content: "\f06a"; /* exclamation-circle */
+}
+
+.validation-message.success::before {
+    content: "\f058"; /* check-circle */
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Password strength indicator */
+.password-strength {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 8px;
+    padding-left: 5px;
+}
+
+.strength-bar {
+    height: 4px;
+    flex: 1;
+    background: #e0e0e0;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.strength-label {
+    font-size: 11px;
+    font-weight: 600;
+    margin-left: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Loading state for async checks */
+.validation-message.checking {
+    color: #6c757d;
+}
+
+.validation-message.checking::before {
+    content: "\f110"; /* spinner */
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* For signup/login forms - validation icons */
+.form-group {
+    position: relative;
+}
+
+.form-group .form input:not(.button).valid,
+.form-group .form input:not(.button).invalid {
+    padding-right: 40px;
+    position: relative;
+}
+
+.form-group .form input:not(.button).valid::after,
+.form-group .form input:not(.button).invalid::after {
+    content: '';
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 14px;
+    pointer-events: none;
+}
+
+.form-group .form input:not(.button).valid::after {
+    content: "\f058";
+    color: #28a745;
+}
+
+.form-group .form input:not(.button).invalid::after {
+    content: "\f06a";
+    color: #dc3545;
+}
+
+/* For login form with icons */
+.input-with-icon {
+    position: relative;
+}
+
+.input-with-icon .form-control.valid ~ i,
+.input-with-icon .form-control.invalid ~ i {
+    display: none;
+}
+
+.input-with-icon .form-control.valid::after,
+.input-with-icon .form-control.invalid::after {
+    content: '';
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 14px;
+}
+
+.input-with-icon .form-control.valid::after {
+    content: "\f058";
+    color: #28a745;
+}
+
+.input-with-icon .form-control.invalid::after {
+    content: "\f06a";
+    color: #dc3545;
+}
+
